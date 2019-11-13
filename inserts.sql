@@ -1,8 +1,11 @@
--- alters --
+-- Alters --
 
 alter table producto
 	alter column calificacion set default 0.00;
 	alter column stockmin set default 5;
+	
+alter table combo
+	alter column nombre type varchar(60);
 
 
 -- INSERTS --
@@ -18,6 +21,7 @@ insert into proveedor values('3077777777', 'Proveedor G', 'Sarmiento 112', 'San 
 insert into proveedor values('3088888888', 'Proveedor H', 'Mariano Moreno 512', 'Concepcion del Uruguay', 'proveedorh@xmail.com', '88888888');
 insert into proveedor values('3099999999', 'Proveedor I', '25 de Mayo 167', 'Gualeguaychu', 'proveedori@xmail.com', '99999999');
 insert into proveedor values('3000000000', 'Proveedor J', 'Almafuerte 128', 'Concepcion del Uruguay', 'proveedorj@xmail.com', '00000000');
+
 
 -- Tipos --
 insert into tipo values(1, 'MATE');
@@ -51,6 +55,8 @@ insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Automate Forrado', 10, 400, 'Mate Listo Automate Forrado de Metal 500cc', '3088888888', 6);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Termo Waterdog', 10, 2100, 'Termo Waterdog de acero inoxidable, de 1 litro, tipo bala', '3099999999', 2);
+insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
+	values('Termo Aluminio', 10, 500, 'Termo Aluminio Doble Capa Varios Colores 1 Litro', '3099999999', 2);
 
 
 -- Roles --
@@ -68,18 +74,48 @@ insert into usuario() values(
 insert into usuario() values(
 	'sanchezhernan@gmail.com', 'Hornit0', 'hernan123', 3, 'Hernan', 'Sanchez', 'J. Peron 465', 'Concepcion del Uruguay', '3445431625');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'lazaro.com', 'Lazaro', 'laza123', 4, 'Lazaro', 'Rodriguez', '9 de Julio 3441', 'La Plata', '2114526721');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'kevinchen.com', 'Kevin', 'kevin123', 4, 'Kevin', 'Chen', '12 de Octubre 552', 'Concepcion del Uruguay', '3442647543');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'verocafrete.com', 'Verost', 'vero123', 4, 'Veronica', 'Frete', 'J. J. Urquiza 41', 'Posadas', '3764256216');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'danieldorado@gmail.com', 'Puerco', 'dani123', 4, 'Daniel', 'Dorado', 'Corrientes 467', 'Cordoba', '3511232597');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'luisreyes@gmail.com', 'Exegye', 'exe123', 4, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Mar del Plata', '2236548962');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'tamaralozano@gmail.com', 'Tami22', 'tami123', 4, 'Tamara', 'Lozano', 'Colon 668', 'Naschel', '2656332584');
 insert into usuario() values(
-	'exe.gye@gmail.com', 'Exegye', 'exe123', 1, 'Exequiel', 'Gonzalez', '25 de Agosto 231', 'Concepcion del Uruguay', '3442647543');
+	'carlospalacios@gmail.com', 'CarlosP', 'carlos123', 4, 'Carlos', 'Palacios', '3 de Febrero 989', 'General Pico', '2302424562');
 
-select * from usuario
+
+
+-- Combos --
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo de Mate Calabaza y bombilla Pico Loro', 950, '2009-11-13', '2010-11-13', 'Mate Uruguayo hecho de las mejores calabazas con Bombilla Uruguaya Pico de Loro, de acero inoxidable, tipo tambor');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo de Mate Premium y bombilla Pico Loro', 1425, '2009-11-13', '2010-11-13', 'Mate realizado con calabazas y cuero finamente seleccionados con Bombilla Uruguaya Pico de Loro, de acero inoxidable, tipo tambor');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo de Mate, Bombilla, Termo Aluminio y Bolso para Mate', 2000, '2009-11-13', '2010-11-13', 'Mate Uruguayo hecho de las mejores calabazas con Bombilla Matelica tipo resorte, Termo Aluminio Doble Capa y Bolso con cierre, tipo tahg con cierre frontal');
+
+
+-- ProductoxCombo --
+insert into productoxcombo values(
+	18, 1);
+insert into productoxcombo values(
+	22, 1);
+insert into productoxcombo values(
+	21, 2);
+insert into productoxcombo values(
+	22, 2);
+insert into productoxcombo values(
+	18, 3);
+insert into productoxcombo values(
+	23, 3);
+insert into productoxcombo values(
+	29, 3);
+insert into productoxcombo values(
+	25, 3);
+
+select * from productoxcombo
+select * from producto
