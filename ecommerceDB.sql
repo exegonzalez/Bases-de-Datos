@@ -1,5 +1,5 @@
 --Creamos las tablas de la BBDD
-/*
+
 create table rol(
   	codigo SERIAL,
 	nombre varchar(25) NOT NULL unique,
@@ -123,7 +123,7 @@ create table compra(
 	foreign key (carrito) references carrito deferrable,
 	foreign key (usuario) references usuario deferrable
 );
-*/
+
 
 
 
