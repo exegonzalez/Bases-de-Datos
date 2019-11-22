@@ -11,6 +11,19 @@ $BODY$
 LANGUAGE 'plpgsql';
 <<<<<<< Updated upstream
 
+-- 2. Dado un combo, ver cuantos se vendieron en el periodo que estuvo disponible -- 
+CREATE OR REPLACE FUNCTION combosVendidosPeriodo(varchar(70)) RETURNS TABLE (codigo integer, cantidad_vendidos bigint) AS
+$BODY$
+DECLARE
+BEGIN
+	return query (SELECT c.codigo, count(lc.cantidadproducto) AS mayor_ventas 
+	FROM combo c, lineaCombos lc, carrito ca, compra co 
+	WHERE c.nombre=$1 and lc.combo=c.codigo and lc.carrito=ca.codigo and co.carrito=ca.codigo and co.fecha BETWEEN c.fechainicio and c.fechafinal
+	GROUP BY c.codigo ORDER BY mayor_ventas DESC LIMIT 1);
+end
+$BODY$
+LANGUAGE 'plpgsql';
+
 -- 3. Cantidad de productos de un determinado tipo --
 CREATE OR REPLACE FUNCTION cantidadMismoTipo(tipoo int) RETURNS TABLE (tipo int, cantidad bigint) AS
 =======
