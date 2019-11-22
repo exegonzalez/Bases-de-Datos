@@ -98,30 +98,54 @@ insert into productoxcombo values(1, 3);
 insert into productoxcombo values(6, 3);
 insert into productoxcombo values(12, 3);
 insert into productoxcombo values(8, 3);
-insert into productoxcombo values(1, 4);
+insert into productoxcombo values(1, 4); 
 insert into productoxcombo values(2, 4);
 
+
+-- Calificacion --
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2019-01-06','20:10:33','exe.gye@gmail.com',3);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	2,'2018-07-13','11:20:00','juancurtoni@gmail.com',7);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(	
+	4,'2017-10-25','22:00:00','luisreyes@gmail.com',1);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	1,'2018-12-23','00:15:29','exe.gye@gmail.com',4);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	3,'2019-05-13','14:20:13','tamaralozano@gmail.com',2);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',10);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',2);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	2,'2019-08-14','05:14:14','verocafrete@gmail.com',1);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2016-05-11','22:14:25','sanchezhernan@gmail.com',9);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	4,'2015-02-13','14:13:12','lazaro@gmail.com',2);
+	
+	
 -- Comentario -- 
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2019-10-14', '12:30:42', 'Producto de excelente calidad, muy recomendado', 8, 'exe.gye@gmail.com',4);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2019-08-14', '22:10:00', 'El producto funciona correctamente', 9, 'juancurtoni@gmail.com',2);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2017-02-03', '05:30:22', 'Producto de buena calidad a un precio barato', 9, 'lazaro@gmail.com',8);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2018-12-01', '16:57:29', 'El producto no era lo que esperaba', 3, 'luisreyes@gmail.com',11);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2019-09-11', '08:02:57', 'Buen producto', 6, 'carlospalacios@gmail.com',6);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2018-04-24', '22:05:20', 'Excelente calidad', 9, 'exe.gye@gmail.com',1);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2011-03-30', '01:40:40', 'Demasiado caro el producto', 2, 'carlospalacios@gmail.com',6);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2014-02-01', '09:29:50', 'Producto super recomendado', 10, 'verocafrete@gmail.com',7);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2016-10-25', '19:04:20', 'El producto llego a tiempo y sin problemas', 8, 'sanchezhernan@gmail.com',11);
-insert into comentario(fecha, hora, contenido, calificacion, usuario, producto) values(
-	'2015-01-30', '02:49:13', 'El producto llego una semana mas tarde', 4, 'juancurtoni@gmail.com',5);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2019-10-14', '12:30:42', 'Producto de excelente calidad, muy recomendado', 'exe.gye@gmail.com',4);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2019-08-14', '22:10:00', 'El producto funciona correctamente', 'juancurtoni@gmail.com',2);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2017-02-03', '05:30:22', 'Producto de buena calidad a un precio barato', 'lazaro@gmail.com',8);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2018-12-01', '16:57:29', 'El producto no era lo que esperaba', 'luisreyes@gmail.com',11);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2019-09-11', '08:02:57', 'Buen producto', 'carlospalacios@gmail.com',6);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2018-04-24', '22:05:20', 'Excelente calidad', 'exe.gye@gmail.com',1);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2011-03-30', '01:40:40', 'Demasiado caro el producto', 'carlospalacios@gmail.com',6);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2014-02-01', '09:29:50', 'Producto super recomendado', 'verocafrete@gmail.com',7);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2016-10-25', '19:04:20', 'El producto llego a tiempo y sin problemas', 'sanchezhernan@gmail.com',11);
+insert into comentario(fecha, hora, contenido, usuario, producto) values(
+	'2015-01-30', '02:49:13', 'El producto llego una semana mas tarde', 'juancurtoni@gmail.com',5);
 
 -- Carrito --
 insert into carrito values (nextval('carrito_codigo_seq'));

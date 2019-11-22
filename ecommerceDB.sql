@@ -52,7 +52,7 @@ create table producto(
 	precio float NOT NULL check (precio>0),
 	stockmin integer NOT NULL check (stockmin>0) default 5,
 	descripcion varchar(255) NOT NULL,
-	calificacion integer NOT NULL check(calificacion in (1,2,3,4,5)) default 0,
+	calificacion integer NOT NULL check(calificacion in (0,1,2,3,4,5)) default 0,
 	proveedor varchar(11) NOT NULL,
 	tipo integer NOT NULL,
 	constraint "producto_pkey" Primary Key (codigo),	
