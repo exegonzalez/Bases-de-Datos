@@ -47,12 +47,12 @@ create table proveedor(
 
 create table producto(
 	codigo SERIAL,
-	nombre varchar(50) NOT NULL,
-	stock integer NOT NULL,
-	precio float NOT NULL,
-	stockmin integer NOT NULL,
+	nombre varchar(70) NOT NULL,
+	stock integer NOT NULL check (stock>0),
+	precio float NOT NULL check (precio>0),
+	stockmin integer NOT NULL check (stockmin>0) default 5,
 	descripcion varchar(255) NOT NULL,
-	calificacion integer NOT NULL,
+	calificacion integer NOT NULL check(calificacion in (1,2,3,4,5)) default 0,
 	proveedor varchar(11) NOT NULL,
 	tipo integer NOT NULL,
 	constraint "producto_pkey" Primary Key (codigo),	
@@ -60,12 +60,22 @@ create table producto(
 	foreign key (tipo) references tipo deferrable
 );
 
+create table calificacion(
+	calificacion integer NOT NULL check (calificacion in (1,2,3,4,5)),
+	fecha date NOT NULL,
+	hora time NOT NULL,
+	usuario varchar(255) NOT NULL,
+	producto integer NOT NULL,
+	constraint "calificacion_pkey" Primary Key (usuario,producto),
+	foreign key (usuario) references usuario deferrable,
+	foreign key (producto) references producto deferrable
+);
+
 create table comentario(
 	codigo SERIAL,
 	fecha date NOT NULL,
 	hora time NOT NULL,
 	contenido varchar(255) NOT NULL,
-	calificacion integer,
 	usuario varchar(255) NOT NULL,
 	producto integer NOT NULL,
 	constraint "comentario_pkey" Primary Key (codigo),
@@ -75,10 +85,10 @@ create table comentario(
 
 create table combo(
 	codigo SERIAL,
-	nombre varchar(50) NOT NULL,
-	precio float NOT NULL,
+	nombre varchar(70) NOT NULL,
+	precio float NOT NULL check (precio>0),
 	fechainicio date NOT NULL,
-	fechafinal date NOT NULL,
+	fechafinal date NOT NULL check (fechainicio<=fechafinal),
 	descripcion varchar(255),
 	constraint "combo_pkey" Primary Key (codigo)
 );
@@ -98,8 +108,8 @@ create table carrito(
 
 create table linea(
 	codigo SERIAL,
-	cantidadproducto integer NOT NULL,
-	totalproducto float NOT NULL,
+	cantidadproducto integer NOT NULL check(cantidadproducto>0),
+	totalproducto float NOT NULL check(totalproducto>0),
 	producto integer,
 	combo integer,
 	carrito integer NOT NULL,
@@ -111,11 +121,11 @@ create table linea(
 
 create table compra(
 	codigo SERIAL,
-	total float NOT NULL,
+	total float NOT NULL check(total>0),
 	fecha date NOT NULL,
 	hora time NOT NULL,
 	numerotarjeta varchar(20) NOT NULL,
-	tipotarjeta varchar(20),
+	tipotarjeta varchar(30) NOT NULL,
 	seguimiento SERIAL,
 	carrito integer NOT NULL,
 	usuario varchar(255) NOT NULL,

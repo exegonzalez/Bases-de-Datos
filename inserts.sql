@@ -1,13 +1,3 @@
--- Alters --
-
-alter table producto
-	alter column calificacion set default 0.00,
-	alter column stockmin set default 5;
-	
-alter table combo
-	alter column nombre type varchar(60);
-
-
 -- INSERTS --
 
 -- Proveedores --
