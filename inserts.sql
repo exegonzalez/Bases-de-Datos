@@ -47,7 +47,8 @@ insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Termo Waterdog', 10, 2100, 'Termo Waterdog de acero inoxidable, de 1 litro, tipo bala', '3099999999', 2);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Termo Aluminio', 10, 500, 'Termo Aluminio Doble Capa Varios Colores 1 Litro', '3099999999', 2);
-
+insert into producto(nombre,stock,precio,descripcion,proveedor,tipo)
+	values('Termo Stanley', 3, 3500, 'El mismo termo pero careta', '3099999999',2);
 
 -- Roles --
 insert into rol(nombre) values('ADMINISTRADOR GENERAL');

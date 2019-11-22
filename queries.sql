@@ -8,6 +8,7 @@ select p.codigo, p.nombre, p.tipo, p.proveedor, s.unidades_compradas from sumaPr
 -- 3. Cantidad de productos de un determinado tipo --
 select * from cantidadmismotipo(4)
 
+<<<<<<< Updated upstream
 -- 4. Proveedor que provee más productos --
 select p.cuit, p.nombre, p.email, p.direccion, pmp.productos_provistos from proveedor p, proveedorMasProductos pmp where pmp.proveedor=p.cuit;
 
@@ -20,3 +21,24 @@ where pmvp.producto=p.codigo
 
 -- 7. Listado de productos que estan por debajo del stock minimo disponible --
 select * from debajoStockMin;
+=======
+select p.codigo, p.nombre, p.tipo, p.proveedor, s.unidades_compradas from sumaProductos s, producto p where s.producto=p.codigo
+*/
+
+-- 3 Cantidad productos del mismo tipo
+--select * from cantidadmismotipo(4)
+
+-- Listado de productos que estan por debajo del stock minimo disponible
+/*
+create view debajoStockMin AS select p.nombre from producto p where p.stock < p.stockmin;
+
+select * from debajoStockMin;
+*/
+
+-- controlar que cuando se cargue una linea solo se tenga un producto o combo
+create trigger trigger_func_li before insert or update on linea 
+for each row execute procedure func_li();
+
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(12, 334, 2, null, 3);
+
+>>>>>>> Stashed changes

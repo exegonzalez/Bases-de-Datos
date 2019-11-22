@@ -9,9 +9,15 @@ BEGIN
 end
 $BODY$
 LANGUAGE 'plpgsql';
+<<<<<<< Updated upstream
 
 -- 3. Cantidad de productos de un determinado tipo --
 CREATE OR REPLACE FUNCTION cantidadMismoTipo(tipoo int) RETURNS TABLE (tipo int, cantidad bigint) AS
+=======
+*/
+
+/*CREATE OR REPLACE FUNCTION cantidadMismoTipo(tipoo int) RETURNS TABLE (tipo int, cantidad bigint) AS
+>>>>>>> Stashed changes
 $BODY$ 
 DECLARE
 BEGIN
@@ -20,6 +26,7 @@ BEGIN
 end
 $BODY$
 LANGUAGE 'plpgsql';
+<<<<<<< Updated upstream
 
 -- 6. Producto más solicitado o vendido durante cierto periodo --
 CREATE OR REPLACE FUNCTION productoMasVendidoPeriodo(date, date) RETURNS TABLE (producto integer, cantidad_vendidos bigint) AS
@@ -33,4 +40,19 @@ BEGIN
 end
 $BODY$
 LANGUAGE 'plpgsql';
+=======
+*/
+
+
+-- TRIGGERS
+
+CREATE OR REPLACE FUNCTION func_li() returns trigger as $funcemp$
+declare 
+begin
+if((select count (l.producto) from linea l where l.producto = new.producto )>=1) then
+	raise exception 'la linea ya tiene 1 producto ';
+	end if;
+	return new;
+end; $funcemp$ language plpgsql;
+>>>>>>> Stashed changes
 
