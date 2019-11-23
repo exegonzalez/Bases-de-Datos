@@ -34,30 +34,18 @@ END; $funcemp$ LANGUAGE plpgsql;
 CREATE TRIGGER triggerControlCalificacionCompra BEFORE INSERT OR UPDATE ON calificacion
 FOR EACH ROW EXECUTE PROCEDURE controlCalificacionCompra();
 	
--- Actualiza la calificacion del producto cuando se inserta un comentario
-create or replace function actualizarCalificacion() returns trigger as $$
+	
+-- 3. Cuando se realiza una calificación, actualizar la calificación actual del producto​ --
+create or replace function actualizarCalificacion() RETURNS TRIGGER AS $funcemp$
 declare
-	calif float;
-	sumatoria float;
-	dividendo integer;
-begin
-	calif = new.calificacion;
-	sumatoria = (select sum(calificacion)
-		from comentario
-		where producto = new.producto)
-	;
-	dividendo := (
-		select count(producto)
-		from comentario
-		where producto = new.producto
-	);
-	dividendo = dividendo + 1;
-	sumatoria = sumatoria + calif;
-	calif = sumatoria / dividendo;
-	update producto set calificacion = calif
-		where codigo = new.producto;
+	promedio float;
+	calif integer;
+BEGIN
+	promedio:= (select avg(calificacion) from calificacion where producto=NEW.producto);
+	calif:= CAST ((select ROUND(promedio)) AS integer);
+	update producto set calificacion=calif where codigo=NEW.producto;
 	return new;
-end;$$ language plpgsql;
+END;$funcemp$ LANGUAGE plpgsql;
 
-create trigger triggerActCalific before insert or update on comentario
+create trigger triggerActualizarCalificacion after insert or update on calificacion
 for each row execute procedure actualizarCalificacion();
