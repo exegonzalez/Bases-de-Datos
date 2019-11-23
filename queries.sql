@@ -2,8 +2,8 @@
 -- 1. Usuario que realizo más compras ente dos fechas --
 select u.email, u.nombre, u.apellido, u.nombreuser, f.cantidad_compras from UsuarioMayorCantidadCompras('2000-01-01','2020-01-01') f, usuario u where u.email=f.usuario;
 
--- 2. Producto del cual se vendieron más unidades -- 
-select p.codigo, p.nombre, p.tipo, p.proveedor, s.unidades_compradas from sumaProductos s, producto p where s.producto=p.codigo;
+-- 2. Dado un combo, ver cuantos se vendieron en el periodo que estuvo disponible -- 
+select c.codigo, c.nombre, c.precio, c.descripcion, cvp.cantidad_vendidos from combosVendidosPeriodo('Combo de Mate Calabaza y bombilla Pico Loro') cvp, combo c where cvp.codigo=c.codigo;
 
 -- 3. Cantidad de productos de un determinado tipo --
 select * from cantidadmismotipo(4)
