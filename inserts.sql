@@ -106,24 +106,18 @@ insert into productoxcombo values(2, 4);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	5,'2019-01-06','20:10:33','exe.gye@gmail.com',3);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	2,'2018-07-13','11:20:00','juancurtoni@gmail.com',7);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(	
-	4,'2017-10-25','22:00:00','luisreyes@gmail.com',1);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	1,'2018-12-23','00:15:29','exe.gye@gmail.com',4);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	3,'2019-05-13','14:20:13','tamaralozano@gmail.com',2);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',10);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',2);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	2,'2019-08-14','05:14:14','verocafrete@gmail.com',1);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2016-05-11','22:14:25','sanchezhernan@gmail.com',9);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	4,'2015-02-13','14:13:12','lazaro@gmail.com',2);
-	
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	1,'2018-01-24','19:04:55','danieldorado@gmail.com',7);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	2,'2015-06-11','04:14:44','exe.gye@gmail.com',10);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',10);
+
 	
 -- Comentario -- 
 insert into comentario(fecha, hora, contenido, usuario, producto) values(
@@ -171,7 +165,7 @@ insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) val
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
 	2400,'2019-04-24', '09:22:11', '3000000022222222', 'VISA', 2,'exe.gye@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
-	5480,'2018-06-12', '22:06:59', '9999888877776666', 'VISA', 1,'juancurtoni@gmail.com');
+	5480,'2010-06-12', '22:06:59', '9999888877776666', 'VISA', 1,'juancurtoni@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
 	27180,'2017-11-28', '15:42:10', '1111222233334444', 'MASTERCARD', 3,'lazaro@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(

@@ -16,6 +16,9 @@ END; $funcemp$ LANGUAGE plpgsql;
 CREATE TRIGGER triggerControlLinea BEFORE INSERT OR UPDATE ON linea
 FOR EACH ROW EXECUTE PROCEDURE controlLinea();
 
+-- Prueba Trigger: Inserts de una linea con un producto y combo simultaneamente, o ninguno.
+--insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(6, 10000, null, null, 4);
+--insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 5200, 2, 4, 6);
 
 -- 2. Controlar que para calificar un producto, se debe haber realizado una compra del mismo previamente --
 CREATE OR REPLACE FUNCTION controlCalificacionCompra() RETURNS TRIGGER AS $funcemp$
@@ -33,8 +36,12 @@ END; $funcemp$ LANGUAGE plpgsql;
 
 CREATE TRIGGER triggerControlCalificacionCompra BEFORE INSERT OR UPDATE ON calificacion
 FOR EACH ROW EXECUTE PROCEDURE controlCalificacionCompra();
-	
-	
+		
+-- Prueba Trigger: Inserts de una calificacion de un usuario que NO compro el producto
+--insert into calificacion(calificacion, fecha, hora, usuario, producto) values(2,'2018-07-13','11:20:00','juancurtoni@gmail.com',7);
+--insert into calificacion(calificacion, fecha, hora, usuario, producto) values(4,'2017-10-25','22:00:00','luisreyes@gmail.com',1);
+
+
 -- 3. Cuando se realiza una calificación, actualizar la calificación actual del producto​ --
 create or replace function actualizarCalificacion() RETURNS TRIGGER AS $funcemp$
 declare
@@ -49,3 +56,7 @@ END;$funcemp$ LANGUAGE plpgsql;
 
 create trigger triggerActualizarCalificacion after insert or update on calificacion
 for each row execute procedure actualizarCalificacion();
+
+-- Prueba Trigger: insert de una calificacion del producto "3", que tenia previamente una calificacion 5.
+--insert into calificacion(calificacion, fecha, hora, usuario, producto) values(1,'2019-04-14','10:22:46','kevinchen@gmail.com',3);
+--select * from producto where codigo=3;

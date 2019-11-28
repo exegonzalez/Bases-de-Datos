@@ -4,8 +4,7 @@
 CREATE VIEW lineaCombos AS SELECT * FROM linea WHERE combo is not null;
 
 -- 4. Proveedor que provee más productos --
-CREATE VIEW p
-roveedorMasProductos AS SELECT p.proveedor, COUNT(p.proveedor) AS productos_provistos
+CREATE VIEW proveedorMasProductos AS SELECT p.proveedor, COUNT(p.proveedor) AS productos_provistos
 FROM producto p GROUP BY p.proveedor ORDER BY productos_provistos DESC LIMIT 1;
 
 -- 5. Listado de productos que pertenecen a más de un combo --

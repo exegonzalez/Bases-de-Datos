@@ -8,11 +8,6 @@ create table rol(
 	constraint "rol_pkey" Primary Key (codigo)
 );
 
-/*CREATE EXTENSION citext;
-CREATE DOMAIN email AS citext
-  CHECK ( value ~ '^[a-zA-Z0-9.!#$%&''*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$' );
-*/
-
 create table usuario(
 	email varchar(255) NOT NULL unique,
 	nombreuser varchar(30) NOT NULL unique,
