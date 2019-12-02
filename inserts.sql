@@ -102,22 +102,6 @@ insert into productoxcombo values(1, 4);
 insert into productoxcombo values(2, 4);
 
 
--- Calificacion --
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2019-01-06','20:10:33','exe.gye@gmail.com',3);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',10);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',2);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	4,'2015-02-13','14:13:12','lazaro@gmail.com',2);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	1,'2018-01-24','19:04:55','danieldorado@gmail.com',7);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	2,'2015-06-11','04:14:44','exe.gye@gmail.com',10);
-insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',10);
-
 	
 -- Comentario -- 
 insert into comentario(fecha, hora, contenido, usuario, producto) values(
@@ -184,3 +168,19 @@ insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usua
 	2400,'2017-05-12', '13:48:15', '4444000044440000', 'MASTERCARD', 2,'kevinchen@gmail.com');
 
 		
+
+-- Calificacion --
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2019-01-06','20:10:33','exe.gye@gmail.com',3);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',10);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',2);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	4,'2015-02-13','14:13:12','lazaro@gmail.com',2);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	1,'2018-01-24','19:04:55','danieldorado@gmail.com',7);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	2,'2015-06-11','04:14:44','exe.gye@gmail.com',10);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',10);
