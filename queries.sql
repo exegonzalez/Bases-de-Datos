@@ -6,7 +6,7 @@ select u.email, u.nombre, u.apellido, u.nombreuser, f.cantidad_compras from Usua
 select c.codigo, c.nombre, c.precio, c.descripcion, cvp.cantidad_vendidos from combosVendidosPeriodo('Combo de Mate Calabaza y bombilla Pico Loro') cvp, combo c where cvp.codigo=c.codigo;
 
 -- 3. Cantidad de productos de un determinado tipo --
-select * from cantidadmismotipo(4)
+select * from cantidadmismotipo(4);
 
 -- 4. Proveedor que provee más productos --
 select p.cuit, p.nombre, p.email, p.direccion, pmp.productos_provistos from proveedor p, proveedorMasProductos pmp where pmp.proveedor=p.cuit;
@@ -16,7 +16,7 @@ select p.codigo, p.nombre, p.tipo, p.proveedor from productosMuchosCombos pmc, p
 
 -- 6. Producto más solicitado o vendido durante cierto periodo --
 select p.codigo, p.nombre, p.tipo, p.proveedor, pmvp.cantidad_vendidos from productoMasVendidoPeriodo('2000-01-01','2020-01-01') pmvp, producto p
-where pmvp.producto=p.codigo
+where pmvp.producto=p.codigo;
 
 -- 7. Listado de productos que estan por debajo del stock minimo disponible --
 select * from debajoStockMin;
