@@ -84,7 +84,7 @@ create table combo(
 	precio float NOT NULL check (precio>0),
 	fechainicio date NOT NULL,
 	fechafinal date NOT NULL check (fechainicio<=fechafinal),
-	descripcion varchar(255),
+	descripcion varchar(255) NOT NULL,
 	constraint "combo_pkey" Primary Key (codigo)
 );
 
@@ -121,7 +121,6 @@ create table compra(
 	hora time NOT NULL,
 	numerotarjeta varchar(20) NOT NULL,
 	tipotarjeta varchar(30) NOT NULL,
-	seguimiento SERIAL,
 	carrito integer NOT NULL,
 	usuario varchar(255) NOT NULL,
 	constraint "compra_pkey" Primary Key (codigo),	
