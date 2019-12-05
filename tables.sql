@@ -121,12 +121,16 @@ create table compra(
 	hora time NOT NULL,
 	numerotarjeta varchar(20) NOT NULL,
 	tipotarjeta varchar(30) NOT NULL,
-	carrito integer NOT NULL,
+	carrito integer NOT NULL unique,
 	usuario varchar(255) NOT NULL,
+	estado varchar(30) NOT NULL default 'ESPERA',
 	constraint "compra_pkey" Primary Key (codigo),	
+	constraint nombre_estado check (estado in
+	('CANCELADA','FINALIZADA','ESPERA')),
 	foreign key (carrito) references carrito deferrable,
 	foreign key (usuario) references usuario deferrable
 );
+
 
 
 

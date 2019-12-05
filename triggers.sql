@@ -17,8 +17,8 @@ CREATE TRIGGER triggerControlLinea BEFORE INSERT OR UPDATE ON linea
 FOR EACH ROW EXECUTE PROCEDURE controlLinea();
 
 -- Prueba Trigger: Inserts de una linea con un producto y combo simultaneamente, o ninguno.
---insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(6, 10000, null, null, 4);
---insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 5200, 2, 4, 6);
+--insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(6, 10000, null, null, 9);
+--insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 5200, 2, 4, 8);
 
 -- 2. Controlar que para calificar un producto, se debe haber realizado una compra del mismo previamente --
 CREATE OR REPLACE FUNCTION controlCalificacionCompra() RETURNS TRIGGER AS $funcemp$
@@ -38,7 +38,6 @@ CREATE TRIGGER triggerControlCalificacionCompra BEFORE INSERT OR UPDATE ON calif
 FOR EACH ROW EXECUTE PROCEDURE controlCalificacionCompra();
 		
 -- Prueba Trigger: Inserts de una calificacion de un usuario que NO compro el producto
---insert into calificacion(calificacion, fecha, hora, usuario, producto) values(2,'2018-07-13','11:20:00','juancurtoni@gmail.com',7);
 --insert into calificacion(calificacion, fecha, hora, usuario, producto) values(4,'2017-10-25','22:00:00','luisreyes@gmail.com',1);
 
 

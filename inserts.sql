@@ -88,6 +88,19 @@ insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
 	'Combo de Mate, Bombilla, Termo Aluminio y Bolso para Mate', 2149, '2009-11-13', '2010-11-13', 'Mate Uruguayo hecho de las mejores calabazas con Bombilla Matelica tipo resorte, Termo Aluminio Doble Capa y Bolso con cierre, tipo tahg con cierre frontal');
 insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
 	'Combo de Mate Uruguayo Cuero y Mate Uruguayo Calabaza', 1600, '2011-10-15', '2013-12-07', 'Promocion de dos Mates Uruguayos -Calabaza y Cuero-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Termo Aluminio y Automate Forrado', 3900, '2010-10-12', '2015-05-01', 'Promocion de termo Aluminio mas Automate-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Bolso para Mate Tahg y Yerba Marolio', 850, '2016-04-24', '2018-10-25', 'Promocion de bolso Mate Tahg y Yerba Marolio-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Mate Uruguayo Calabaza y Yerba Marolio', 800, '2005-02-15', '2010-05-14', 'Promocion de mate Uruguayo Calabaza y Yerba Marolio-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Mate Uruguayo Calabaza y Termo Stanley', 4200, '2017-09-20', '2018-01-12', 'Promocion de mate Uruguayo Calabaza y Termo Stanley-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Bombilla Metalica y Termo Aluminio', 699, '2013-08-14', '2019-12-12', 'Promocion de bombilla Melatica y Termo Aluminio-');
+insert into combo(nombre, precio, fechainicio, fechafinal, descripcion) values(
+	'Combo Mate Madera y Yerba Marolio', 500, '2015-11-24', '2017-04-06', 'Promocion de mate Madera y Yerba Marolio-');
+
 
 -- ProductoxCombo --
 insert into productoxcombo values(1, 1);
@@ -100,9 +113,20 @@ insert into productoxcombo values(12, 3);
 insert into productoxcombo values(8, 3);
 insert into productoxcombo values(1, 4); 
 insert into productoxcombo values(2, 4);
+insert into productoxcombo values(10,5);
+insert into productoxcombo values(12,5);
+insert into productoxcombo values(7,6);
+insert into productoxcombo values(8,6);
+insert into productoxcombo values(7,7);
+insert into productoxcombo values(1,7);
+insert into productoxcombo values(1,8);
+insert into productoxcombo values(13,8);
+insert into productoxcombo values(12,9);
+insert into productoxcombo values(6,9);
+insert into productoxcombo values(7,10);
+insert into productoxcombo values(3,10);
 
 
-	
 -- Comentario -- 
 insert into comentario(fecha, hora, contenido, usuario, producto) values(
 	'2019-10-14', '12:30:42', 'Producto de excelente calidad, muy recomendado', 'exe.gye@gmail.com',4);
@@ -132,18 +156,39 @@ insert into carrito values (nextval('carrito_codigo_seq'));
 insert into carrito values (nextval('carrito_codigo_seq'));
 insert into carrito values (nextval('carrito_codigo_seq'));
 insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
+insert into carrito values (nextval('carrito_codigo_seq'));
 
 -- Linea -- 
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(6, 2400, 3, null, 2);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(3, 4485, null, 2, 1);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(20, 3980, 6, null, 3);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(1, 995, null, 1, 1);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(3, 995, 13, null, 1);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(5, 2000, 10, null, 4);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(10, 7000, 1, null, 3);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(30, 3000, 7, null, 5);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 8596, null, 3, 6);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(15, 24000, null, 4, 6);
 insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(18, 16200, 2, null, 3);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 24000, 5, null, 6);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(15, 24000, null, 6, 7);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(8, 24000, 7, null, 7);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(15, 24000, null, 7, 8);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(1, 24000, 11, null, 8);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(15, 24000, null, 8, 9);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(8, 24000, 4, null, 9);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(15, 24000, null, 10, 10);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(4, 24000, 2, null, 10);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(7, 24000, 2, null, 11);
+insert into linea(cantidadproducto, totalproducto, producto, combo, carrito) values(3, 5500, 3, null, 12);
+
 
 -- Compra --
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
@@ -159,28 +204,36 @@ insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usua
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
 	32596,'2019-02-24', '02:24:19', '9999222211110000', 'NARANJA', 6,'luisreyes@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
-	27180,'2015-10-31', '07:14:49', '8888444499992222', 'CABAL', 3,'juancurtoni@gmail.com');
+	27180,'2015-10-31', '07:14:49', '8888444499992222', 'CABAL', 7,'juancurtoni@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
-	2000,'2016-08-14', '20:56:11', '1111333311112222', 'CABAL', 4,'juancurtoni@gmail.com');
+	2000,'2016-08-14', '20:56:11', '1111333311112222', 'CABAL', 8,'juancurtoni@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
-	2000,'2019-01-02', '23:11:00', '5555333322221111', 'VISA', 4,'carlospalacios@gmail.com');
+	2000,'2019-01-02', '23:11:00', '5555333322221111', 'VISA', 9,'carlospalacios@gmail.com');
 insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
-	2400,'2017-05-12', '13:48:15', '4444000044440000', 'MASTERCARD', 2,'kevinchen@gmail.com');
-
-		
+	2400,'2017-05-12', '13:48:15', '4444000044440000', 'MASTERCARD', 10,'kevinchen@gmail.com');
+insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
+	2000,'2018-12-12', '11:42:15', '4422000011114444', 'MASTERCARD', 11,'exe.gye@gmail.com');
+insert into compra(total, fecha, hora, numerotarjeta, tipotarjeta, carrito, usuario) values(
+	3290,'2014-05-22', '19:30:11', '4422999912214488', 'MASTERCARD', 12,'kevinchen@gmail.com');
 
 -- Calificacion --
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	5,'2019-01-06','20:10:33','exe.gye@gmail.com',3);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',10);
+	4,'2019-02-14','10:22:13','carlospalacios@gmail.com',4);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',2);
+	5,'2017-05-22','15:10:33','juancurtoni@gmail.com',13);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	4,'2015-02-13','14:13:12','lazaro@gmail.com',2);
+	4,'2015-02-13','14:13:12','lazaro@gmail.com',6);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	1,'2018-01-24','19:04:55','danieldorado@gmail.com',7);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
 	2,'2015-06-11','04:14:44','exe.gye@gmail.com',10);
 insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
-	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',10);
+	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',7);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2016-12-24','23:59:10','juancurtoni@gmail.com',11);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2016-12-24','23:59:10','kevinchen@gmail.com',2);
+insert into calificacion(calificacion, fecha, hora, usuario, producto) values(
+	5,'2018-11-21','21:02:16','exe.gye@gmail.com',2);
