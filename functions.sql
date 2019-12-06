@@ -47,3 +47,19 @@ end
 $BODY$
 LANGUAGE 'plpgsql';
 
+-- Contar si la cantidad de una linea es menor que el stock de los productos de un combo  --
+CREATE OR REPLACE FUNCTION cantidadLineaProductosCombo(integer, integer) RETURNS boolean AS
+$BODY$
+DECLARE
+	contadortotal integer;
+	contadorparcial integer;
+BEGIN
+	contadortotal:= (select count(pc.combo) from productoxcombo pc where $2=pc.combo);
+	contadorparcial:= (select count(pc.combo) from productoxcombo pc, producto p
+	where $2=pc.combo and pc.producto=p.codigo and $1<=p.stock);
+	if(contadortotal=contadorparcial)then
+		return true;
+	else
+		return false;
+	end if;
+end; $BODY$ LANGUAGE 'plpgsql';
