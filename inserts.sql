@@ -36,11 +36,11 @@ insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Bombilla Metalica', 500, 199, 'Bombillas metalicas de varios colores de tipo resorte', '3044444444', 3);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
-	values('Yerba Marolio', 500, 100, 'Yerba Mate Marolio, Marolio le da sabor a tu vida', '3055555555', 5);
+	values('Yerba Marolio', 494, 100, 'Yerba Mate Marolio, Marolio le da sabor a tu vida', '3055555555', 5);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Bolso para Mate Tahg', 500, 750, 'Bolso con cierre, tipo tahg, con bolsillo frontal', '3066666666', 4);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
-	values('Bolso para Mate Gamuza', 500, 859, 'Bolso porta termo negro de poliester con gamuza', '3066666666', 4);
+	values('Bolso para Mate Gamuza', 5, 859, 'Bolso porta termo negro de poliester con gamuza', '3066666666', 4);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)
 	values('Automate Forrado', 500, 400, 'Mate Listo Automate Forrado de Metal 500cc', '3088888888', 6);
 insert into producto(nombre, stock, precio, descripcion, proveedor, tipo)

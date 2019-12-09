@@ -1,0 +1,13 @@
+--> Orden de ejecucion de los scripts SQL para crear la BBDD.
+1. tables.sql //Se crean las tablas y las restricciones
+2. views.sql //Se crean las vistas 
+3. functions.sql //Se crean las funciones
+4. triggers.sql //Se crean los triggers
+5. user_roles.sql //Se crean los usuarios y se dan los permisos correspondientes
+6. inserts.sql //Se insertan los datos en las tablas
+
+--> Scripts SQL para realizar pruebas y consultas sobre la BBDD.
+- queries.sql //Permite ejecutar las consultas propuestas en las reglas de negocio
+- pruebaFunciones.sql //Ejecuta las pruebas de las funciones creadas 
+- pruebaTriggers.sql //Ejecuta las pruebas de los triggers
+
