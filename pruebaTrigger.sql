@@ -30,7 +30,7 @@ update compra set estado='FINALIZADA' where codigo=13;
 -- 5. Verificacion de que la cantidad de productos a comprar en una linea, sea menor o igual que el stock disponible --
 --> Actualizamos la cantidad de productos a comprar de la linea 19, donde se compra el combo 10, 
 -- en el cual un producto tiene stock 500 y el otro 494.
-update linea set cantidadproducto=500 where codigo=19;
+update linea set cantidadproducto=300 where codigo=19;
 
 --> Actualizamos la cantidad de productos a comprar de la linea 1, donde se compra el producto 3, 
 -- que tiene un stock de 500.
